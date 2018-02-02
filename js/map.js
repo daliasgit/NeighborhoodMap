@@ -16,7 +16,7 @@ var locations = [ {
 	location: {
 		lat: 59.900185, 
 		lng: 10.628829
-	}
+    }
 
 }, {
 	name: 'Holmenkollen Ski Museum, Oslo',
@@ -72,10 +72,12 @@ function initMap() {
         marker.addListener('click', function() {
             populateInfoWindow(this, largeInfowindow);
           });
-        bounds.extend(markers[i].position);
+        
     }
-    // Extend the boundaries of the map for each marker
-    map.fitBounds(bounds);
+    
+    document.getElementById('show-listings').addEventListener('click', showListings);
+    document.getElementById('hide-listings').addEventListener('click', hideListings);
+      
 }
 // This function populates the infowindow when the marker is clicked. We'll only allow
 // one infowindow which will open at the marker that is clicked, and populate based
@@ -90,5 +92,22 @@ function populateInfoWindow(marker, infowindow) {
         infowindow.addListener('closeclick',function(){
           infowindow.setMarker = null;
         });
+    }
+}
+// This function will loop through the markers array and display them all.
+function showListings() {
+   var bounds = new google.maps.LatLngBounds();
+    // Extend the boundaries of the map for each marker and display the marker
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+        bounds.extend(markers[i].position);
+    }
+    map.fitBounds(bounds);
+}
+
+// This function will loop through the listings and hide them all.
+function hideListings() {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
     }
 }
