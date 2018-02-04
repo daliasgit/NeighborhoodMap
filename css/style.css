@@ -59,3 +59,8 @@ hr {
 .text {
         font-size: 12px;
       }
+#toggle-drawing {
+        width: 27%;
+        position: relative;
+        margin-left: 10px;
+      }
