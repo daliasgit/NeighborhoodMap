@@ -45,3 +45,17 @@ h1 {
       text-align: left;
       width: 340px;
       }
+hr {
+        background: #D0D7D9;
+        height: 1px;
+        margin: 20px 0 20px 0;
+        border: none;
+      }
+#pano {
+        width: 200px;
+        height: 200px;
+      }
+
+.text {
+        font-size: 12px;
+      }
