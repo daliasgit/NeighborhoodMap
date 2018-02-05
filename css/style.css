@@ -64,3 +64,11 @@ hr {
         position: relative;
         margin-left: 10px;
       }
+#zoom-to-area-text {
+        position: relative;
+        width: 70%;
+      }
+
+#zoom-to-area {
+        width: 24%;
+      }
