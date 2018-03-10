@@ -4,34 +4,56 @@
     <meta charset= "utf-8">
     <meta name= "viewport" content= "width=device-width, initial-scale=1">
     <title>Neighborhood Map Project</title>
+    <link rel= "stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel= "stylesheet" type= "text/css" href= "css/style.css">    
   </head>
   <body>
-    <div class="container">
-      <div class="options-box">
-        <h1>Find Your  place </h1>
-        <div>
-          <input id="show-listings" type="button" value="Show Listings">
-          <input id="hide-listings" type="button" value="Hide Listings">
+      <div class="toggled" id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <div class="sidebar-nav" style="margin-left: 2em">
+          <p></p>
+          <h1 id= "head">Locations</h1>
+          <p></p>
+          <form>
+            <input data-bind="textInput: filter" id="street" placeholder="Search...">
+          </form>
           <hr>
-          <span class="text"> Draw a shape to search within it for homes!</span>
-          <input id="toggle-drawing"  type="button" value="Drawing Tools">
-        </div>
-        <hr>
-        <div>
-          <input id="zoom-to-area-text" type="text" placeholder="Enter your favorite area!">
-          <input id="zoom-to-area" type="button" value="Zoom">
+          <ul data-bind="foreach: myLocations">
+            <li data-bind="text: name, visible: visible, click: $root.listViewClick"></li>
+          </ul>
+          <hr>
+          <div class="wikipedia-container">
+            <h4 id="wikipedia-header">Relevant Wikipedia Links</h4>
+            <p>Click on Location Names</p>
+            <ul data-bind="foreach: wikipedia">
+              <li>
+                <a data-bind="attr: { href: $data, title: $data}">Relevant Links</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div id="map"></div>  
     </div>
-    <script src='js/lib/knockout-3.4.2.js'></script>> 
+  </div><!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div id="map"></div><a class="btn btn-secondary" href="#menu-toggle" id="menu-toggle">&#9776;</a>
+  </div>
+  <div class="container-fluid">
+    <!-- /#page-content-wrapper -->
+    <!-- /#wrapper -->
+
+    <script src= "popper/popper.min.js"></script>>
+    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src='js/lib/knockout-3.4.2.js'></script>
     <script src="js/lib/jquery.min.js"></script>  
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7_upmm7lR3dakqelTlhVV2P6nSvCF2xQ&libraries=geometry,drawing&v=3&callback=initMap">
+    <script src= "js/map.js"></script><!-- Load google maps API -->
+    <script async defer onerror="mapError()"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7_upmm7lR3dakqelTlhVV2P6nSvCF2xQ&libraries=geometry,places&v=3&callback=viewModel.initMap">
         
     </script>
-    <script src= "js/map.js"></script><!-- Load google maps API -->
+    
 
   </body>
 </html>
