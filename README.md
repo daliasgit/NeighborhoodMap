@@ -1,7 +1,7 @@
 # Neighborhood Map
  
-####Udacity project with knockout JS framework and google maps API.
-This project is a single page application that displays few of the tourist spots around Oslo, Norway.
+#### Udacity project with knockout JS framework and google maps API.
+⋅⋅⋅ This project is a single page application that displays few of the tourist spots around Oslo, Norway.⋅⋅
 
 ## Design
   
