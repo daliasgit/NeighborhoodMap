@@ -1,6 +1,7 @@
 Neighborhood Map
 ================
-This project is a single page application that displays few of the tourist spots around Oslo, Norway.
+##Udacity project with knockout JS framework and google maps API.
+  This project is a single page application that displays few of the tourist spots around Oslo, Norway.
 
 Design
 =======
@@ -13,8 +14,8 @@ Design
        -KnockOut JS
 
 ## 2. The APIs used are
-       * Google Maps
-       * Wikipedia
+*       Google Maps
+*       Wikipedia
 
 Pre-Requirements
 =================
@@ -26,8 +27,8 @@ Installation Steps
 ==================
 -  1. Fork the github repository. The original repository can be found [here](https://github.com/daliasgit/NeighborhoodMap)
 -  2. Open Terminal
--  3. Clone it to local repository using '''git clone <fork repository url>'''
--  4. Run the command '''cd/NeighborhoodMap'''
+-  3. Clone it to local repository using '''-git clone <fork repository url>'''
+-  4. Run the command '''-cd/NeighborhoodMap'''
 
 FAQ
 ====
