@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang= "en">
-  <head>
-    <meta charset= "utf-8">
-    <meta name= "viewport" content= "width=device-width, initial-scale=1">
-    <title>Neighborhood Map Project</title>
-    <link rel= "stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel= "stylesheet" type= "text/css" href= "css/style.css">    
-  </head>
-  <body>
-      <div class="toggled" id="wrapper">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="author">
+  <title>Neighborhood Map Project</title><!-- Bootstrap core CSS -->
+  <link href="js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+  <div class="toggled" id="wrapper">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <div class="sidebar-nav" style="margin-left: 2em">
           <p></p>
-          <h1 id= "head">Locations</h1>
+          <h1>Locations</h1>
           <p></p>
           <form>
             <input data-bind="textInput: filter" id="street" placeholder="Search...">
@@ -43,17 +45,24 @@
   <div class="container-fluid">
     <!-- /#page-content-wrapper -->
     <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/vendor/jquery/jquery.min.js">
+    </script> 
+    <script src="js/vendor/popper/popper.min.js">
+    </script> 
+    <script src="js/vendor/bootstrap/js/bootstrap.min.js">
+    </script> <!-- Menu Toggle Script -->
+     
 
-    <script src= "popper/popper.min.js"></script>>
-    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src='js/lib/knockout-3.4.2.js'></script>
-    <script src="js/lib/jquery.min.js"></script>  
-    <script src= "js/map.js"></script><!-- Load google maps API -->
-    <script async defer onerror="mapError()"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7_upmm7lR3dakqelTlhVV2P6nSvCF2xQ&libraries=geometry,places&v=3&callback=viewModel.initMap">
-        
+    <script src='js/lib/knockout-3.4.2.js'>
+    </script> 
+    <script src='js/lib/jquery.min.js'>
+    </script> 
+    <script src="js/map.js">
+    </script> <!-- Load google maps API -->
+     
+    <script async defer onerror="mapError()" src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyA7_upmm7lR3dakqelTlhVV2P6nSvCF2xQ&v=3&callback=viewModel.initMap">
     </script>
-    
-
-  </body>
+  </div>
+</body>
 </html>
