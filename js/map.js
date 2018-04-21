@@ -217,7 +217,7 @@ var ViewModel = function() {
 
 function mapError() {
     document.getElementById("head").innerHTML = "<h1>Oops! Something went wrong. Please try again!</h1>";
-};
+}
 
 var loadData = function( name ) {
 
