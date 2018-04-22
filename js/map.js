@@ -248,4 +248,5 @@ var loadData = function( name ) {
            });
 var viewModel = new ViewModel();
 viewModel.filter.subscribe( viewModel.search );
+// Activates knockout.js
 ko.applyBindings( viewModel );
