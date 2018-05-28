@@ -7,23 +7,16 @@ var markers = [];
 
 // These are the place listings that wiil be shown to the user.
 var locations = [ {
-	name: 'The Vigeland Park Oslo',
-	location: {
-		lat: 59.927190, 
-		lng: 10.700812
-	}
-}, {
-	name: 'Fornebu, Oslo',
-	location: {
-		lat: 59.900185, 
-		lng: 10.628829
+    name: 'Frogner Park',
+    location: {
+        lat: 59.926614, 
+        lng: 10.703452
     }
-
 }, {
-	name: 'Holmenkollen Ski Museum, Oslo',
+	name: 'Holmenkollbakken',
 	location: {
-		lat: 59.964337, 
-		lng: 10.667083
+		lat: 59.964167, 
+		lng: 10.667783
 	}
 }, {
 	name: 'Viking Ship Museum, Oslo',
@@ -32,17 +25,17 @@ var locations = [ {
 		lng: 10.684397
 	}
 }, {
-	name: 'Opera House, Oslo',
+	name: 'Telenor Arena',
 	location: {
-		lat: 59.907650, 
-		lng: 10.753138
+		lat: 59.903310,  
+		lng: 10.623948 
 	}
 }, {
-	name: 'TusenFryd, Norway',
+	name: 'TusenFryd',
 	location: {
-		lat: 59.748181, 
-		lng: 10.778209
-	}
+		lat: 59.748235, 
+		lng: 10.778273 
+    }    
 } ];
 
  // Create a styles array to use with the map.
@@ -114,9 +107,9 @@ var locations = [ {
     ];
 
 var Location = function( data ) {
-    this.name = ko.observable( data.name );
+    this.name =  data.name;
     this.visible = ko.observable( true );
-    this.location = ko.observable( data.location );
+    this.location = data.location ;
     this.marker = data.marker;
 };
 
@@ -130,8 +123,7 @@ var ViewModel = function() {
     this.markers = ko.observableArray( locations );
     this.filter = ko.observable( "" );
     this.wikipedia = ko.observableArray( [] );
-    url = ko.observable( this.currentlocation );
-    details = ko.observable( url );
+    
 
     this.search = function( value ) {
         // remove all the current locations, which removes them from the view
@@ -215,9 +207,9 @@ var ViewModel = function() {
     };
 };
 
-function mapError() {
-    document.getElementById("head").innerHTML = "<h1>Oops! Something went wrong. Please try again!</h1>";
-}
+window.mapError = function( errorMsg, url, lineNumber ) {
+    alert( 'Google Maps Failed To Load' );
+};
 
 var loadData = function( name ) {
 
